@@ -1,7 +1,7 @@
 # Networks - Folia Edition
 
 <p align="center">
-<img width="800" src="https://github.com/wilianlimasantos/Networks-3.0/blob/master/images/logo/logo.svg"><br><br>
+<img width="800" src="https://github.com/Sefiraat/Networks/blob/master/images/logo/logo.svg"><br><br>
 </p>
 
 **Networks** is a premium Slimefun4 addon that brings a powerful item storage and movement network system that works seamlessly alongside Slimefun cargo systems. This **Folia Edition** is a modernized version with enhanced security, performance optimizations, and full support for multi-threaded server architectures.
@@ -341,9 +341,51 @@ When player requests items from grid:
 ```yaml
 # Auto-update the plugin when development versions are available
 auto-update: false
-```
 
-The plugin generates this configuration file on first run in `plugins/Networks/config.yml`.
+# Network-specific settings
+network:
+  # Maximum nodes per network (can be overridden per controller)
+  max-nodes: 5000
+  
+  # Enable debug logging
+  debug: false
+  
+  # Enable visual particles for networks with crayon enabled
+  enable-particles: true
+  
+  # Chunk loading for network operations
+  force-load-chunks: false
+
+# Performance settings
+performance:
+  # Tick rate for network updates (in ticks)
+  network-tick-rate: 1
+  
+  # Maximum items to move per tick per exporter
+  max-items-per-transfer: 64
+  
+  # Enable async network processing (may cause issues)
+  async-processing: false
+
+# Integration settings
+integrations:
+  infinity-expansion: true
+  netheopoiesis: true
+  slime-hud: true
+  wild-chests: true
+  mcmmo: true
+
+# Anti-dupe settings
+security:
+  # Enable all 7 layers of dupe prevention
+  enable-dupe-protection: true
+  
+  # Corruption cleanup interval (in ticks)
+  cleanup-interval: 20
+  
+  # Block protection level (basic, advanced, ultimate)
+  protection-level: ultimate
+```
 
 ---
 
@@ -352,8 +394,11 @@ The plugin generates this configuration file on first run in `plugins/Networks/c
 ### Commands
 
 ```
-/networks fillquantum <amount>  - Set amount in Quantum Storage card in hand
-/networks setquantum <amount>   - Set amount in Quantum Storage block being looked at
+/networks help              - Show help menu
+/networks info              - Show network information
+/networks admin             - Access admin commands (requires permission)
+/networks reload            - Reload configuration
+/networks debug [on|off]    - Toggle debug mode
 ```
 
 ### Permissions
@@ -362,7 +407,18 @@ The plugin generates this configuration file on first run in `plugins/Networks/c
 networks.admin
   Description: Allows access to admin commands
   Default: OP
+  
+networks.use
+  Description: Allows using network components
+  Default: TRUE
+  
+networks.craft
+  Description: Allows crafting in network grids
+  Default: TRUE
 ```
+
+### Command Aliases
+- `/networks` → `/ntw`
 
 ---
 
@@ -445,8 +501,8 @@ networks.admin
 
 ```bash
 # Clone the repository
-git clone https://github.com/wilianlimasantos/Networks-3.0.git networks-3.0
-cd networks-3.0
+git clone https://github.com/Sefiraat/Networks.git networks-folia
+cd networks-folia
 
 # Compile with Maven
 mvn clean package
@@ -495,8 +551,9 @@ src/main/java/io/github/sefiraat/networks/
 ## 📖 Documentation
 
 For comprehensive system documentation, visit:
-- **[GitHub Repository](https://github.com/wilianlimasantos/Networks-3.0)**
-- **[Report Issues](https://github.com/wilianlimasantos/Networks-3.0/issues)**
+- **[Complete Guide](https://sefiraat.dev)**
+- **[GitHub Issues](https://github.com/Sefiraat/Networks/issues)**
+- **[Bug Reports](https://github.com/Sefiraat/Networks-Folia/issues)**
 
 ---
 
@@ -509,7 +566,7 @@ This project is licensed under the MIT License. See `LICENSE` file for details.
 ## 👤 Credits
 
 - **Original Author:** Sefiraat
-- **Refactoring & Bug Fixes:** wilianlimasantos
+- **Folia Port & Security Updates:** Networks Folia Team
 - **Slimefun4 Framework:** TheBusyBiscuit
 - **Paper Project:** PaperMC Team
 
