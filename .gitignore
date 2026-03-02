@@ -7,4 +7,38 @@
 .project
 .classpath
 .settings/
+
+# Build files
 *.log
+build.log
+
+# JAR files (dependencies should be managed by Maven)
+*.jar
+*.war
+*.ear
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+*.swp
+*.swo
+*~
+.idea/
+*.iws
+*.ipr
+
+# Documentation drafts and duplicates
+README_DETAILED.md
+README_PUBLISHABLE.md
+IMPROVEMENTS_SUMMARY.md
